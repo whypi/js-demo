@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>跳转到其他页面</title>
+  <script>
+    // 跳转地址
+    function changeUrl(){
+      // 得到新的url的值
+      var newUrl = document.getElementById("newUrl").value;
+      self.location.href = newUrl;  // 通过修改地址栏的地址来跳转到新的网页地址
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <input type="text" id="newUrl">
+  <input type="button" onclick="changeUrl()" value="跳转地址">
+</body>
+</html>
