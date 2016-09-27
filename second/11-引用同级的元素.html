@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>引用同级的元素</title>
+  <script>
+    //获取同级按钮的value
+    function getLevelBtnVal(btn){
+      var p = btn.parentNode; //通过单击按钮获取它的父节点
+      var children = p.childNodes;  //得到父节点的所有子节点
+      //遍历子节点
+      for(var i=0;i<children.length;i++){
+        //判断不是当前节点，但却是同类节点的节点
+        if(children[i] != btn && children[i].nodeType==btn.nodeType){
+          alert(children[i].value); //提示对方的value值
+        }
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <!-- 定义按钮 -->
+    <input type="button" value="获取同级按钮的value1" onclick="getLevelBtnVal(this);">
+    <input type="button" value="获取同级按钮的value2" onclick="getLevelBtnVal(this);">
+  </p>
+</body>
+</html>

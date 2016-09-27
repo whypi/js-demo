@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>替换元素内容</title>
+  <script>
+    //替换元素内容
+    function replaceContent(){
+      //得到DOM元素
+      var myDom = document.getElementById("myDom");
+      //使用innerHTML直接替换
+      myDom.innerHTML = '<span>一句话</span>&nbsp;<a href="#">一个链接</a>';
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <input type="button" value="替换内容" onclick="replaceContent();">
+  </p>
+  <!-- 定义元素 -->
+  <p id="myDom">
+    <a href="#">一个链接</a>&nbsp;<span>一句话</span>
+  </p>
+</body>
+</html>

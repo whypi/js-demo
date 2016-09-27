@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>根据标签名获取多个元素</title>
+  <script>
+    //获取多个DOM
+    function getDomsByTag(){
+      //获取的DOMS
+      var doms = document.getElementsByTagName("span");
+      var str = ""  //定义拼接字符变量
+      for(var i=0;i<doms.length;i++){
+        str += doms[i].innerHTML; //拼接文本
+        str += ","; //分隔符
+      }
+      alert("两个DOM的文本是：" + str);  //提示
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <!-- 定义元素 -->
+    <span>文字一</span>
+    <span>文字二</span>
+    <br>
+    <input type="button" value="获取" onclick="getDomsByTag();">
+  </p>
+</body>
+</html>

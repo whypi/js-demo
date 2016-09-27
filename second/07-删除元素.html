@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>删除元素</title>
+  <script>
+    //删除元素
+    function deleteElement(){
+      //获取准备删除的DOM
+      var del = document.getElementById("del");
+      //调用删除函数彻底删除
+      del.parentNode.removeChild(del);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <input type="button" value="删除元素" onclick="deleteElement();">
+  </p>
+  <span id="del">即将被删除的DOM</span>
+</body>
+</html>

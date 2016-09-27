@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>触发按钮的单击事件</title>
+  <script>
+    //触发按钮单击的事件
+    function fireBtnClick(){
+      //获取到按钮DOM
+      var myBtn = document.getElementById("myBtn");
+      //使用click()函数
+      myBtn.click();
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <!-- 定义按钮 -->
+    <input type="button" value="触发按钮的事件" onclick="fireBtnClick();">
+    <br>
+    <!-- 定义按钮，单击事件是一个提示信息 -->
+    <input type="button" id="myBtn" value="提示按钮" onclick="alert('我被提示了！')">
+  </p>
+</body>
+</html>

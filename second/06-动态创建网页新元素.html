@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>创建新元素</title>
+  <script>
+    //创建新元素
+    function creatNewElements(){
+      //使用innerHTML创建新元素
+      var p1 = document.getElementById("p1");
+      //设置innerHTML内容
+      p1.innerHTML = "<span>我的dom文本1</span>";
+      //使用createElement来创建新元素
+      var span = document.createElement("span");
+      //为新元素内容创建一个文本节点
+      span.appendChild(document.createTextNode("我的dom文本2"));
+      var p2 = document.getElementById("p2");
+      //挂接
+      p2.appendChild(span);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <input type="button" value="创建新元素" onclick="creatNewElements();">
+  </p>
+  <!-- 定义为新元素挂接的容器元素 -->
+  <p id="p1"></p>
+  <p id="p2"></p>
+</body>
+</html>
