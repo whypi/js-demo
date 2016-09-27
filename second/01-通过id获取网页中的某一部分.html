@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>通过id获取一个特定的DOM元素</title>
+  <script>
+    //获取DOM的文字内容
+    function getDomText() {
+      //获取链接的DOM
+      var myLink = document.getElementById("myLink");
+      //获取span的DOM
+      var mySpan = document.getElementById("mySpan");
+      var str = ""; //定义拼接字符变量
+      str += myLink.innerHTML;  //加入链接的文本
+      str += mySpan.innerHTML;  //加入span的文本
+      alert("两个DOM的内容是：" + str);  //提示
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>
+    <!-- 定义有id属性的元素 -->
+    <a href="#" id="myLink">链接</a>
+    <span id="mySpan">文字</span>
+    <br>
+    <input type="button" value="获取" onclick="getDomText();">
+  </p>
+</body>
+</html>
