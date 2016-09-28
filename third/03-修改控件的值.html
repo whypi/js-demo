@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function modifyValues(){
+      var f = document.forms[0];  
+      var elements = f.elements;
+      //循环遍历
+      for(var i=0;i<elements.length;i++){
+        var e = elements[i];  //当前的控件
+        //判断是否为按钮
+        if(e.tagName == "INPUT" && e.type == "button"){
+          
+        }else{
+          e.value = 123456;  //统一把值修改为123456
+        }
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义表单 -->
+  <form action="">
+    文本框：<input type="text" name="myText">
+    <br>
+    下拉列表：
+    <select name="mySelect" id="">
+      <option value="">请选择</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <br>
+    <input type="button" value="修改控件的值" onclick="modifyValues()">
+  </form>
+</body>
+</html>

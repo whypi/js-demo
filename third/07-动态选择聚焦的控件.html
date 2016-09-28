@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态选择聚焦的控件</title>
+  <script>
+    function focusIt(){
+      var f = document.forms[0];
+      var myRadio = f.myRadio;  //获取单选框
+      myRadio[0].focus(); //第一个单选框获得焦点
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="" method="post">
+    文本框：<input type="text" name="myText">
+    <br>
+    单选框：<input type="radio" name="myRadio" value="1">
+    <input type="radio" name="myRadio" value="2">
+    <br>
+    下拉列表：
+    <select name="mySelect" id="">
+      <option value="">==请选择==</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <br>
+    <input type="button" value="第一个单选框为焦点" onclick="focusIt()">
+  </form>
+</body>
+</html>

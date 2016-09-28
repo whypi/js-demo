@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用隐藏控件为表单添加参数</title>
+  <script>
+    function showParams(){
+      //设置隐藏变量的值，这个值也可以通过标签的value指定
+      document.forms[0].myhidden.value = "我是隐藏的";
+      var str = "表单将提交的参数包括：";  //定义字符拼接变量
+      //拼接年份参数
+      str += "\n年份："+document.forms[0].myyear.value;
+      //拼接姓名参数
+      str += '\n姓名：'+document.forms[0].myname.value;
+      //拼接隐藏变量参数
+      str += '\n隐藏变量参数：'+document.forms[0].myhidden.value;
+      alert(str); //展示字符的值
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="">
+    <input type="hidden" name="myhidden">
+    年份：
+    <select name="myyear" id="">
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+    </select>
+    <br>
+    姓名：<input type="text" name="myname">
+    <br>
+    <input type="button" value="提交" onclick="showParams()">
+  </form>
+</body>
+</html>

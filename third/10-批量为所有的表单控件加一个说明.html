@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>批量为所有的表单控件加一个说明</title>
+  <script>
+    function batchComment(){
+      var f = document.forms[0];
+      var children = f.childNodes;  //获取表单的所有子元素
+      var newArr = [];  //定义新的元素数组
+      var j = 0;  //为新元素数组定义下标
+      //循环遍历子元素
+      for(var i=0;i<children.length;i++){
+        var e = children[i];  //当前子元素
+        newArr[j++] = e;  //添加到新数组里
+        //判断是否为控件
+        if(e.tagName=="INPUT"||e.tagName=="SELECT"){
+          //添加一个文字说明的节点
+          var text = document.createTextNode("此项必填");
+          newArr[j++] = text; //为新数组加入节点
+        }
+      }
+      f.innerHTML = ""; //清空现有的表单内容
+      //批量说明
+      for(var i=0;i<newArr.length;i++){
+        f.appendChild(newArr[i]); //把老的元素和说明节点加入form
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="" method="post">
+    文本框：<input type="text" name="myText">
+    <br>
+    单选框：<input type="radio" name="myRadio" value="1">
+    <input type="radio" name="myRadio" value="2">
+    <br>
+    下拉列表：
+    <select name="mySelect" id="">
+      <option value="">==请选择==</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <br>
+    <input type="button" value="批量说明" onclick="batchComment()">
+  </form>
+</body>
+</html>

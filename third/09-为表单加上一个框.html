@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function rangeIt(){
+      var f = document.forms[0];
+      //动态地为表单指定边框样式
+      f.style.width = "300px";
+      f.style.border = "1px solid black";
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="" method="post">
+    文本框：<input type="text" name="myText">
+    <br>
+    单选框：<input type="radio" name="myRadio" value="1">
+    <input type="radio" name="myRadio" value="2">
+    <br>
+    下拉列表：
+    <select name="mySelect" id="">
+      <option value="">==请选择==</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <br>
+    <input type="button" value="加上边框" onclick="rangeIt()">
+  </form>
+</body>
+</html>

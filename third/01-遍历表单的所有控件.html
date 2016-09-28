@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>遍历表单的所有控件</title>
+  <script>
+    //遍历表单的所有控件
+    function getValue(){
+      var f = document.forms[0];  //获取表单的DOM
+      var elements = f.elements;  //获取所有的控件数组
+      var str = ""; //拼接字符串
+      //循环遍历
+      for(var i=0;i<elements.length;i++){
+        var e = elements[i];  //当前的控件
+        str += e.value; //拼接控件的值
+        str += '\n';  //拼接分隔符
+      }
+      alert(str); //用提示框展示结果
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义表单 -->
+  <form action="">
+    文本框：<input type="text" name="myText">
+    <br>
+    单选框：<input type="radio" name="myRadio" value="2">
+    <br>
+    下拉列表：
+    <select name="mySelect" id="">
+      <option value="">请选择</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <br>
+    <input type="button" value="得到所有控件的值" onclick="getValue()">
+  </form>
+</body>
+</html>

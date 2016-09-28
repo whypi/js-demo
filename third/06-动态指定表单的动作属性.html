@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态指定表单的动作属性</title>
+  <script>
+    function modifyAction(){
+      var f = document.forms[0];
+      var newUrl = f.newUrl.value;  //选择的方法
+      f.action = newUrl;  //修改提交表单的action地址
+      //用提示框展示结果
+      alert("表单当前的动作："+f.action);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="">
+    请选择提交方法：
+    <input type="text" name="newUrl">
+    <br>
+    <input type="button" value="修改提交Action" onclick="modifyAction()">
+  </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function modifyMethod(){
+      var f = document.forms[0];
+      var method = f.myMethod.value;  //选择的方法
+      f.method = method;  //修改选择的提交方法
+      //用提示框展示结果
+      alert("表单当前的提交方法："+method);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="" method="post">
+    请选择提交方法：
+    <select name="myMethod" id="">
+      <option value="">==请选择==</option>
+      <option value="get">get</option>
+      <option value="post">post</option>
+    </select>
+    <br>
+    <input type="button" value="修改提交方法" onclick="modifyMethod()">
+  </form>
+</body>
+</html>

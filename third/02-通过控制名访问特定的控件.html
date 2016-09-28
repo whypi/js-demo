@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>通过控制名访问特定的控件</title>
+  <script>
+    //通过控制名访问特定的控件
+    function getFormDom(){
+      var f = document.forms[0];  //获取表单的DOM
+      var myText = f.myText;  //通过名字获取控件DOM
+      //提示控件的name和value
+      alert(myText.name + ":" + myText.value);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义表单 -->
+  <form action="">
+    文本框：<input type="text" name="myText">
+    <br>
+    <input type="button" value="获取控件" onclick="getFormDom()">
+  </form>
+  <p>对于一般的DOM元素来说，通过点操作符“.”或者“[]”只能访问到DOM自身的属性的值，而表单form则还可以访问到它所包含的控件，这里的参数即控件的name属性值</p>
+</body>
+</html>
