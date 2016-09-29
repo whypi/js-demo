@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算窗口内的框架数量</title>
+  <script>
+    function alertFrames(){
+      var frames = window.frames; //得到框架的总数
+      alert(frames.length); //用提示框展示框架的总数，也就是数组的大小
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义框架 -->
+  <iframe id="frame1"></iframe>
+  <iframe id="frame2"></iframe>
+  <br>
+  <input type="button" value="一共有多少个框架" onclick="alertFrames()">
+</body>
+</html>
