@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用鼠标拖动图片</title>
+  <script>
+    function dragPic(e){
+      var e = e||window.event;  //获取真实的事件变量
+      var myElement = e.srcElement || e.target; //获取事件的源DOM
+      if(e.preventDefault){
+        e.preventDefault(); //避免默认的事件处理
+      }else{
+        //如果没有preventDefault则返回值为false
+        e.returnvalue = false;
+      }
+      var mypic = document.getElementById("mypic"); 
+      mypic['draging'] = true;  //设置拖动属性为true
+      //计算得到拖动以前的图片距离左上角点的left和top的值
+      var relLeft = e.clientX - parseInt(myElement.style.left);
+      var relTop = e.clientY - parseInt(myElement.style.top);
+      //当鼠标放开时，则停止拖动
+      myElement.onmouseup = function(){
+        mypic['draging'] = false; //设置拖动属性为false
+      }
+      //定义鼠标的移动事件，注意这里是document的
+      //表示图片的整个网页里的鼠标移动
+      document.onmousemove = function(eMove){
+        //获取真实的事件变量
+        var eMove = eMove||window.event;
+        if(mypic['draging']==true){ //如果处于正在拖动中
+          //设置新的left的值，减去鼠标点距左上角的距离
+          myElement.style.left = eMove.clientX - relLeft + "px";
+          //设置新的top的值，减去鼠标点距左上角的距离
+          myElement.style.top = eMove.clientY - relTop + "px";
+          return false;
+        }
+      }
+    }
+    //当网页加载好以后就为图片拖动定义事件
+    window.onload = function(){
+      //获取图片的DOM
+      var mypic = document.getElementById("mypic");
+      //定义一个属性用于存储是否正在拖动
+      mypic['draging'] = false;
+      //根据浏览器的不同，调用不同的添加事件监听器
+      if(navigator.userAgent.indexOf("MSIE")>0){  //ie
+        //为图片定义鼠标按下事件
+        mypic.attachEvent("onmousedown", dragPic);
+      }else{  //非ie
+        //为图片定义鼠标按下事件
+        mypic.addEventListener("mousedown",dragPic,false);
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义图片 -->
+  <img src="1.png" id="mypic" alt="" style="left: 10px ;top: 10px;position: absolute;">
+</body>
+</html>

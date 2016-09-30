@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标进出时字体大小变化</title>
+  <script>
+    //鼠标指针移进
+    function mOver(pDom){
+      pDom.style.fontSize = '20px';
+    }
+    //鼠标指针移出
+    function mOut(pDom){
+      pDom.style.fontSize = '';
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+   <p style="margin: 5px auto;width: 200px;height: 200px; border:1px solid black;" onmouseover="mOver(this);" onmouseout="mOut(this)">把鼠标移动到该区域</p>
+</body>
+</html>

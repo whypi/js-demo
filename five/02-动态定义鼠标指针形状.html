@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态定义鼠标指针形状</title>
+  <script>
+    //初始化鼠标形状
+    function initMouse(){
+      //通过标签名得到目标DOM，如果是全网页则这里可以用body
+      var pDom = document.getElementsByTagName('p')[0];
+      //修改样式的鼠标指针形状，pointer
+      pDom.style.cursor = "pointer";
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="initMouse();">
+  <p style="margin: 5px auto;width: 200px;height: 200px;background: gray;">把鼠标移动到该区域</p>
+</body>
+</html>

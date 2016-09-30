@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>双击鼠标滚动到网页底部</title>
+  <style>
+    p {
+      height: 300px;
+    }
+  </style>
+  <script>
+    var nowPos; //当前的位置
+    var myTimer;  //定时器变量
+    //开始函数
+    function startIt(){
+      //开始定时器，以10毫秒为单位
+      myTimer = window.setInterval("scrollPage()",10);
+    }
+    //停止函数
+    function stopIt(){
+      //取消定时器
+      clearInterval(myTimer);
+    }
+    //滚动屏幕函数
+    function scrollPage(){
+      window.scrollBy(0, 1);  //以1px为单位开始滚屏
+    }
+    document.onmousedown = stopIt;  //监听单击事件
+    document.ondblclick = startIt;  //监听双击事件
+  </script>
+</head>
+<body style="text-align: center;">
+  <p>双击开始滚屏，单击则停止</p>
+  <p>11</p>
+  <p>22</p>
+  <p>33</p>
+  <p>44</p>
+  <p>55</p>
+  <p>66</p>
+  <p>77</p>
+  <p>88</p>
+  <p>99</p>
+  <p>这里是底部！这里是底部！这里是底部</p>
+</body>
+</html>

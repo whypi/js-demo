@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>网页被打开后5秒钟弹出广告窗口</title>
+  <script>
+    function init(){
+      setTimeout(function(){
+        // open一个新窗口
+        window.open('ad.html',"广告标题","width=200,height=200,border=0");
+      }, 5000); //5秒
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="init();">
+  <h2>广告窗口将在5秒后打开</h2>
+</body>
+</html>

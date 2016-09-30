@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>禁用鼠标右键</title>
+  <script>
+    //为文档的鼠标按下事件定义回调
+    document.onmousedown = function(event){
+      //判断事件的值是否为鼠标右键
+      if(event.button == 2){
+        alert('禁用鼠标右键');  //提示用户禁用鼠标右键
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <h2>禁用鼠标右键</h2>
+</body>
+</html>

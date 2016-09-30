@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>子框架的互相引用</title>
+  <script>
+    function alertFrames(){
+      var frames = window.frames; //得到框架数组
+      var frame1 = frames[0]; //引用第一个框架
+      //站在frame1的角度，使用parent属性得到父框架，这里就是window
+      var frame2 = frame1.parent.frames[1];
+      alert(frame2.document); //用提示框展示框架2的document
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <iframe id="frame1"></iframe>
+  <iframe id="frame2"></iframe>
+  <br>
+  <input type="button" value="用frame1引用frame2" onclick="alertFrames()">
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>让鼠标滑轮失效</title>
+  <script>
+    function init(){
+      //重新定义document的滑轮滑动的事件回调函数
+      document.onmousewheel = function(){
+        alert("禁止使用滑轮") //提示用户不可以用滑轮
+        return false; //返回false，什么也不操作
+      };
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="init()">
+  <p style="width: 5px;">你滑动滑轮试试看</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用top操作顶部的框架</title>
+  <script>
+    function alertFrames(){
+      //使用top变量得到顶层的父框架，这里就是window
+      var topFrame = top;
+      // 用提示框展示topFrame的html
+      alert(topFrame.document.body.innerHTML);
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <iframe id="frame1"></iframe>
+  <iframe id="frame2"></iframe>
+  <br>
+  <p>top是一个很好的变量，它的含义是顶层的框架，它往往和window指的是同一个窗口或框架</p>
+  <input type="button" value="用top操作顶部的框架" onclick="alertFrames()">
+</body>
+</html>
