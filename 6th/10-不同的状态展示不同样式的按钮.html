@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>不同的状态展示不同样式的按钮</title>
+  <script>
+    var currStatus = "正常";  //当前的状态
+    var myTimer = null; //定时器
+    var mySec = 0;  //定时还剩下的秒数
+    //修改按钮为正常状态
+    function normalStatus(){
+      var myBtn = document.getElementById("myBtn");
+      myBtn.disabled = false; //恢复可用状态
+      window.clearInterval(myTimer);  //取消定时器
+      currStatus = "正常";  //设置正常状态显示值
+      showStatus(); //显示当前状态
+    }
+    //修改按钮为不可用状态
+    function disableStatus(){
+      var myBtn = document.getElementById("myBtn");
+      myBtn.disabled = true; //设置不可用为true
+      window.clearInterval(myTimer);  //取消定时器
+      currStatus = "不可用";  //设置不可用状态显示值
+      showStatus(); //显示当前状态
+    }
+    //修改按钮为开始定时10秒以后可用的状态
+    function timerStatus(){
+      var myBtn = document.getElementById("myBtn");
+      myBtn.disabled = true; //设置不可用为true
+      window.clearInterval(myTimer);  //取消定时器
+      mySec = 10; //开始10秒倒计时
+      myTimer = window.setInterval(function(){
+        if(mySec == 0){ //如果倒计时完了，则恢复按钮状态
+          normalStatus(); //恢复到正常状态
+        }else{
+          mySec--;  //让倒计时秒数递减
+          //设置倒计时状态显示值
+          currStatus = '倒计时中('+mySec+')';
+          showStatus();  //显示当前状态
+        }
+      }, 1000)
+    }
+    //显示当前状态
+    function showStatus(){
+        var h2 = document.getElementsByTagName("h2")[0];
+        //设置标题为当前的状态
+        h2.innerHTML = "当前的状态："+ currStatus;
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义按钮 -->
+  <h2>当前的状态：</h2>
+  <input type="button" value="正常状态" id="myBtn1" onclick="normalStatus()">
+  <input type="button" value="不可用状态" id="myBtn2" onclick="disableStatus()">
+  <input type="button" value="开始倒计时状态" id="myBtn3" onclick="timerStatus()">
+  <br><br>
+  <input type="button" value="一个按钮" id="myBtn">
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>为按钮加上背景颜色</title>
+  <script>
+    function defineBtnBack(){ //为按钮加上背景颜色
+      var myBtn = document.getElementById("myBtn"); //获取按钮的DOM
+      myBtn.style.background = "red"; //把背景颜色改成红色
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="defineBtnBack()">
+  <!-- 定义按钮 -->
+  <input type="button" value="一个按钮" id="myBtn">
+</body>
+</html>

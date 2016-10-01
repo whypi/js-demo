@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>会变色的按钮</title>
+  <script>
+    function init(){
+      var btn = document.getElementById("btn");
+      //监听鼠标移入事件
+      btn.onmouseover = function(){
+        this.style.backgroundColor = "red"; //修改背景颜色为红色
+      }
+      //监听鼠标移出事件
+      btn.onmouseout = function(){
+        this.style.backgroundColor = "";  //恢复背景颜色
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="init()">
+  <input type="button" value="按钮" id="btn">
+</body>
+</html>

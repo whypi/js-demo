@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>通过单击按钮改变状态栏信息</title>
+  <script>
+    function modifyStatus(){  
+      window.status = "hello world";  //为status设置新的值
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <input type="button" value="修改状态栏" id="myBtn" onclick="modifyStatus()">
+</body>
+</html>

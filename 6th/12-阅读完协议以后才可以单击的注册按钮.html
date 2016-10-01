@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阅读完协议以后才可以单击的注册按钮</title>
+  <script>
+    function doScroll(){
+      var d = document.getElementById("xieyi");
+      var btn = document.getElementById("btn");
+      if(d.scrollTop + d.offsetHeight>200){ //判断是否滚动到最底部
+        btn.disabled = false; //恢复按钮可用
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <div style="width: 200px;height: 150px;overflow-y: scroll;margin: 5px auto;border: 1px solid balck;" onscroll="doScroll()" id="xieyi">
+    请认真阅读本协议……<br>
+    ……<br>
+    ……<br>……<br>……<br>……<br>……<br>……<br>……<br>……<br>……<br>
+    协议end。
+  </div>
+  <br>
+  <input type="button" value="注册" id="btn" disabled="disabled">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>不同的按钮提交不同的表单地址</title>
+  <script>
+    //提交表单
+    function submitForm(btn){
+      var btnId = btn.id; //获取单击按钮的id
+      var f = document.forms[0];  //当前的表单
+      if(btnId == "myBtn1"){  //是否是第一个按钮
+        f.action = "url1.html"; //修改action的地址
+      }else if(btnId == "myBtn2"){  //如果是第二个按钮
+        f.action = "url2.html"; //修改action的地址
+      }
+      f.submit(); //提交表单
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义表单，包含两个按钮 -->
+  <form action="" method="post" style="display: block;width: 200px;height: 200px;border: 1px solid black;">
+    <br><br><br>
+    <input type="button" value="提交按钮一" id="myBtn1" onclick="submitForm(this)">
+    <br>
+    <input type="button" value="提交按钮二" id="myBtn2" onclick="submitForm(this)">
+  </form>
+</body>
+</html>

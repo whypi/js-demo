@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>在网页上为用户定义一个打印按钮</title>
+  <script>
+    function printDoc(btn){ //打印功能
+      window.print(); //调用window的打印函数
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <!-- 定义表单，按钮 -->
+  <form action="" method="post" style="display: block;width: 200px;height: 200px;border: 1px solid black;">
+    <br>
+    <input type="button" value="打印" id="myPrintBtn" onclick="printDoc()">
+  </form>
+</body>
+</html>
