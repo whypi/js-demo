@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>改变链接的单击事件</title>
+  <script>
+    // 自定义click事件
+    function defineLinkClick(){
+      var myLink = document.getElementById("myLink");
+      myLink.onclick = function(){
+        alert("链接被单击了~"); //事件的内容逻辑
+        return false; //返回
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="defineLinkClick()">
+  <a href="#" id="myLink">一个链接</a>
+</body>
+</html>

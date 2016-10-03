@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>几条链接交替显示</title>
+  <script>
+    var arr = []; //数据数组变量
+    //初始化数据
+    arr[arr.length] = ['链接1','http://www.baidu.com'];
+    arr[arr.length] = ['链接2','http://www.baidu.com'];
+    arr[arr.length] = ['链接3','http://www.baidu.com'];
+    var index = 0;  //当前下标
+    //初始化函数
+    function init(){
+      // 开始定时器
+      setInterval(function(){
+        // 判断是否超过边界
+        if(index>=arr.length){
+          index = 0;  //恢复到0
+        }
+        var str = '<a href="'+arr[index][1]+'">'+arr[index][0]+'</a>';
+        var demo = document.getElementById("demo");
+        demo.innerHTML = str; //填充内容
+        index++;  //索引加1
+      },2000);
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="init()">
+  <div id="demo"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function confirmOpen(link){
+      // 弹出提示框，要求用户确认
+      if(confirm('你确认打开'+link+'吗？')){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <a href="http://www.baidu.com" onclick="return(confirmOpen(this.href))">打开链接</a>
+</body>
+</html>

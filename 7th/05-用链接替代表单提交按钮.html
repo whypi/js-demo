@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用链接替代表单提交按钮</title>
+  <script>
+    function submitForm(){
+      var form = document.forms[0];
+      form.submit();  //提交表单
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <form action="" method="get">
+    <input type="text" name=""><br>
+    <a href="#" id="myLink" onclick="submitForm()">提交表单</a>
+  </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>关闭窗口的那个X链接</title>
+  <script>
+    function defineLinkClick(){
+      var myLink = document.getElementById("myLink");
+      myLink.onclick = function(){
+        window.close(); //关闭窗口
+        return false; //返回
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="defineLinkClick()">
+  单击&nbsp;<a href="#" id="myLink">X</a>&nbsp;关闭窗口
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>让所有链接都在新窗口打开</title>
+  <script>
+    function modifyOpenType(){
+      var linkDoms = document.getElementsByTagName("a");
+      for(var i=0;i<linkDoms.length;i++){
+        var link = linkDoms[i];
+        link.target = "_blank"; //在新窗口中打开
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <a href="#">链接一</a><br>
+  <a href="#">链接二</a><br>
+  <input type="button" value="修改打开方式" id="myBtn" onclick="modifyOpenType()">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>让页面所有超级链接都失效</title>
+  <script>
+    function invaildLinks(){
+      var linkDoms = document.getElementsByTagName("a");
+      for(var i=0;i<linkDoms.length;i++){
+        var link = linkDoms[i];
+        link.onclick = null;  //把单击事件置空
+        link.href = "javascript:void(0)"; //地址改成什么都不做
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <a href="http://www.baidu.com">链接一</a><br>
+  <a href="#">链接二</a><br>
+  <input type="button" value="失效" id="myBtn" onclick="invaildLinks()">
+</body>
+</html>

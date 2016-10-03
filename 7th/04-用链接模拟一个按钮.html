@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用链接模拟一个按钮</title>
+  <script>
+    function defineLinkClick(){
+      var myLink = document.getElementById("myLink");
+      myLink.style.fontSize = '16px'; //字体
+      myLink.style.textAlign = 'center'; //字符对齐
+      myLink.style.color = 'white'; //颜色
+      myLink.style.padding = '4px 10px'; //内距离
+      myLink.style.margin = '3px'; //外边框
+      myLink.style.background = 'gray'; //背景色
+      myLink.style.textDecoration = "none"; //文本样式
+      //边框颜色，设置深浅效果来模仿按钮
+      myLink.style.borderColor = '#eee #717171 #717171 #eee';
+      myLink.style.borderStyle = "solid"  //边框样式为实线
+      myLink.style.borderWidth = "1px"  //边框的粗细
+    }
+  </script>
+</head>
+<body style="text-align: center;" onload="defineLinkClick()">
+  <a href="#" id="myLink">按钮式链接</a>
+</body>
+</html>

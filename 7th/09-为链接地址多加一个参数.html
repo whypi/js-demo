@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>为链接地址多加一个参数</title>
+  <script>
+    function showNewUrl(){
+      var links = document.getElementsByTagName("a");
+      for(var i=0;i<links.length;i++){
+        var href = links[i]['href'];  //得到当前的地址
+        //如果包含了问号的地址，证明已经有参数了
+        if(href.indexOf('?')>0){
+          //使用&符号串联更多的参数
+          links[i]['href'] = href + '&param001=test';
+        }else{
+          // 使用“?”来加第一个参数
+          links[i]['href'] = href + '?param001=test';
+        }
+      }
+    }
+  </script>
+</head>
+<body style="text-align: center;">
+  <a href="index.php">链接一</a>&nbsp;
+  <a href="index.php?page=1">链接一</a>&nbsp;<br>
+  <input type="button" value="为链接新添加一个参数" onclick="showNewUrl()">
+</body>
+</html>
